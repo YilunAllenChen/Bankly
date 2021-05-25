@@ -1,0 +1,19 @@
+{
+  "name": "bankly",
+  "version": "1.0.0",
+  "description": "learn how banks trade derivatives - by playing a game!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YilunAllenChen/Bankly.git"
+  },
+  "author": "Allen Chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YilunAllenChen/Bankly/issues"
+  },
+  "homepage": "https://github.com/YilunAllenChen/Bankly#readme"
+}
