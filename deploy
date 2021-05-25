@@ -1,0 +1,17 @@
+#!/bin/bash
+
+NAME_IMAGE="allenchen0223/bankly"
+NAME_CONTAINER="bankly-app"
+
+
+# Create production build
+cd bankly
+npm run build
+cd ..
+
+# Build docker image
+sudo docker build -t $NAME_IMAGE .
+
+sudo docker ps -q --filter "name=$NAME_CONTAINER" | grep -q . && sudo docker stop $NAME_CONTAINER && sudo docker rm -fv $NAME_CONTAINER
+sudo docker push $NAME_IMAGE
+sudo docker run -d -p 8080:80 --name $NAME_CONTAINER $NAME_IMAGE 
