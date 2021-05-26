@@ -1,1 +1,3 @@
+#!/bin/bash
+
 export KUBECONFIG=bankly-kubeconfig.yaml
