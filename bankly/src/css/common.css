@@ -1,0 +1,24 @@
+
+
+body, div{
+    color: #ffffff;
+    font-weight: 400;
+    font-size: large;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+  }
+  
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+hr {
+    color: #ffffff
+}
+
+.black {
+    color: #111111
+}

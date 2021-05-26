@@ -1,42 +1,29 @@
 import React from "react";
 import { Container, Row, Col } from "shards-react";
-import { Button } from "shards-react";
-import "../css/welcome.css";
+import LineChart from "../components/play/equity_line";
+import EquityForm from "../components/play/equity_form";
 
-import { useSelector, useDispatch } from "react-redux";
-import { to_any, to_second, to_welcome } from "../states/global";
+import "../css/common.css";
+
 
 function Intro() {
-  const dispatch = useDispatch();
+  
 
   return (
     <div className="App-header">
-      <Container
-        style={{ height: "100vh", maxWidth: "100%", paddingTop: "30px" }}
-      >
-        <Row className="centered">
-          <Container>
-            <Row>
-              <Col style={{ textAlign: "center" }}>
-                Woah. You got to the Equity page.
-              </Col>
-            </Row>
-            <br />
+      <Container style={{ height: "100vh", width: "100%", paddingTop: "30px" }}>
 
-            <Row>
-              <Button
-                pill
-                theme="light"
-                size="lg"
-                onClick={() => {
-                  dispatch(to_welcome());
-                }}
-              >
-                Get Started Now!
-              </Button>
-            </Row>
-          </Container>
+        <br />
+        <Row>
+          <Col sm="12" md="6" lg="6">
+            <LineChart />
+          </Col>
+          <Col sm="12" md="6" lg="6">
+            <EquityForm />
+            <hr></hr>
+          </Col>
         </Row>
+        <br />
       </Container>
     </div>
   );

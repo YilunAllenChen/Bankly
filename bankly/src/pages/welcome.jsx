@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "shards-react";
 import { Button } from "shards-react";
-import "../css/welcome.css";
+import "../css/common.css";
 
-import { useSelector, useDispatch } from "react-redux";
-import { to_any, to_second, to_welcome } from "../states/global";
+import { useDispatch } from "react-redux";
+import { toPage } from "../states/global";
 
 function Intro() {
   const dispatch = useDispatch();
@@ -17,24 +17,29 @@ function Intro() {
         <Row className="centered">
           <Container>
             <Row>
-              <Col style={{ textAlign: "center" }}>
+              <Col>
                 Financial Market. Learn how it's done.
               </Col>
             </Row>
             <br />
 
             <Row>
-              <Button
-                pill
-                theme="info"
-                size="lg"
-                onClick={() => {
-                  dispatch(to_second());
-                  console.log("click")
-                }}
-              >
-                Get Started Now!
-              </Button>
+              <Col>
+                <Button
+                  pill
+                  theme="info"
+                  size="lg"
+                  onClick={() => {
+                    dispatch(
+                      toPage({
+                        view: "learnEquity",
+                      })
+                    );
+                  }}
+                >
+                  Get Started Now!
+                </Button>
+              </Col>
             </Row>
           </Container>
         </Row>
