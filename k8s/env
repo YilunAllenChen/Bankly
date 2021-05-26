@@ -1,3 +1,10 @@
 #!/bin/bash
 
 export KUBECONFIG=bankly-kubeconfig.yaml
+
+
+# example usages
+
+
+# kubectl get pods
+# cubectl edit deployment bankly-deployment
