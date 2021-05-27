@@ -4,7 +4,7 @@ import { Button } from "shards-react";
 import "../css/common.css";
 
 import { useDispatch } from "react-redux";
-import { toPage } from "../states/global";
+import { toPage } from "../states/store";
 
 function Intro() {
   const dispatch = useDispatch();

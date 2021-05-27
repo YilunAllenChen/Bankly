@@ -6,7 +6,7 @@ import {
   appendEquityLineChartDataPoint,
   tradeStock,
   equityTradingStatus,
-} from "../../states/global";
+} from "../../states/store";
 import Portfolio from "./portfolio";
 
 class EquityForm extends React.Component {

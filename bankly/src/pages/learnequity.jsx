@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Container, Row, Col } from "shards-react";
 import { useDispatch } from "react-redux";
 import { HowToTradeEquity, WhatIsEquity, StockGoesUp, Dividends } from "../components/learnequity/learn";
-import { toPage } from "../states/global";
+import { toPage } from "../states/store";
 
 import "../css/common.css";
 

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import {
   toPage,
   resetStockData,
-} from "../../states/global";
+} from "../../states/store";
 
 class EndgameModal extends React.Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class EndgameModal extends React.Component {
 
   toggle() {
     this.setState({
-      open: !this.prop.open,
+      open: !this.state.open,
     });
   }
 

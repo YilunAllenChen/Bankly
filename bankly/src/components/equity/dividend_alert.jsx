@@ -3,7 +3,7 @@ import { Alert } from "shards-react";
 import "../../css/alert.css"
 
 import { connect } from "react-redux";
-import { tradeStock } from "../../states/global";
+import { tradeStock } from "../../states/store";
 
 class SelfDismissingAlertExample extends React.Component {
   constructor(props) {
