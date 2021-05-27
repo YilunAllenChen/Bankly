@@ -17,7 +17,7 @@ export default class TooltipExample extends React.Component {
   render() {
     return (
       <span>
-        <span id="dividendTooltip">8.02</span>
+        <span id="dividendTooltip">Dividend Yield: 8.02</span>
         <Tooltip
           open={this.state.open}
           placement='bottom'

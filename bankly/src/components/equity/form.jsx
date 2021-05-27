@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import {
   appendEquityLineChartDataPoint,
   tradeStock,
+  equityTradingStatus,
 } from "../../states/global";
 import Portfolio from "./portfolio";
-
 
 class EquityForm extends React.Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class EquityForm extends React.Component {
     this.changeNumShares = this.changeNumShares.bind(this);
     this.handleBuy = this.handleBuy.bind(this);
     this.handleSell = this.handleSell.bind(this);
+    this.handleEndGame = this.handleEndGame.bind(this);
   }
 
   changeNumShares(e) {
@@ -30,11 +31,11 @@ class EquityForm extends React.Component {
       numShares: parseInt(e.target.value),
     });
   }
-  
-  resetError(){
+
+  resetError() {
     this.setState({
-      error: ""
-    })
+      error: "",
+    });
   }
 
   handleBuy() {
@@ -106,7 +107,6 @@ class EquityForm extends React.Component {
     const data = this.props.lineChartData.datasets[0].data;
     let quote = data[data.length - 1];
     let newQuote = (quote * (0.94 + Math.random() * 0.13)).toFixed(2);
-    console.log("Wala");
     this.props.dispatch(
       appendEquityLineChartDataPoint({
         value: newQuote,
@@ -115,10 +115,19 @@ class EquityForm extends React.Component {
   };
 
   componentDidMount() {
-    this.intervalId = setInterval(this.pushNewPrice.bind(this), 2500);
+    this.pushNewPriceInterval = setInterval(this.pushNewPrice.bind(this), 2500);
   }
-  componentWillUnmount(){
-    clearInterval(this.intervalId);
+  componentWillUnmount() {
+    clearInterval(this.pushNewPriceInterval);
+  }
+
+  handleEndGame() {
+    clearInterval(this.pushNewPriceInterval);
+    this.props.dispatch(
+      equityTradingStatus({
+        done: true,
+      })
+    );
   }
 
   render() {
@@ -162,7 +171,15 @@ class EquityForm extends React.Component {
           <font style={{ color: "red" }}>{this.state.error}</font>
         </Row>
         <hr></hr>
-        <Portfolio />
+        <Portfolio /> <hr></hr>
+        <Row>
+          <Col xs="8"></Col>
+          <Col>
+            <Button theme="danger" onClick={this.handleEndGame}>
+              I'm DONE!
+            </Button>
+          </Col>
+        </Row>
       </div>
     );
   }
