@@ -6,7 +6,8 @@ import {
   appendEquityLineChartDataPoint,
   tradeStock,
 } from "../../states/global";
-import Portfolio from "./equity_portfolio";
+import Portfolio from "./portfolio";
+
 
 class EquityForm extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class EquityForm extends React.Component {
     this.state = {
       side: "Buy",
       numShares: 100,
+      symbol: "PEAR",
       error: "",
     };
 
@@ -28,6 +30,12 @@ class EquityForm extends React.Component {
       numShares: parseInt(e.target.value),
     });
   }
+  
+  resetError(){
+    this.setState({
+      error: ""
+    })
+  }
 
   handleBuy() {
     let symbol = "PEAR";
@@ -39,12 +47,14 @@ class EquityForm extends React.Component {
       this.setState({
         error: "Woah. Can't buy negative number of shares!",
       });
+      setInterval(this.resetError.bind(this), 5000);
       return;
     }
     if (amount > cash) {
       this.setState({
         error: "Can't buy that many - not enough cash!",
       });
+      setInterval(this.resetError.bind(this), 5000);
       return;
     }
     this.props.dispatch(
@@ -69,6 +79,7 @@ class EquityForm extends React.Component {
       this.setState({
         error: "Woah. Can't sell negative number of shares!",
       });
+      setInterval(this.resetError.bind(this), 5000);
       return;
     }
     if (this.state.numShares > stocks[symbol]) {
@@ -76,6 +87,7 @@ class EquityForm extends React.Component {
         error:
           "Woah. Not enough shares to sell. If you want to learn to *short* a stock, try our later little games!",
       });
+      setInterval(this.resetError.bind(this), 5000);
       return;
     }
     this.props.dispatch(
@@ -121,7 +133,6 @@ class EquityForm extends React.Component {
             <font style={{ color: "aqua" }}>${quote}</font> per share.
           </h2>
           <hr></hr>
-
           <p>Enter the number of shares you want to trade.</p>
           <Row>
             <Col sm="6" lg="6">

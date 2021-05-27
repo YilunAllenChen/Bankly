@@ -4,7 +4,8 @@ import "../../css/charts.css";
 import { useSelector } from "react-redux";
 import { Container } from "shards-react";
 import { Card, CardBody, CardTitle, CardSubtitle } from "shards-react";
-
+import DividendTooltip from "./dividend_tooltip"
+import CompanyTooltip from "./company_tooltip"
 
 const options = {
   transitions: {
@@ -60,7 +61,7 @@ const LineChart = () => {
   return (
     <Container>
       <div className="header">
-        <h3 className="title">🍐 PEAR (Pear Inc.)</h3>
+        <h3 className="title"><CompanyTooltip /></h3>
       </div>
       <Line data={data} options={options} />
       <br></br>
@@ -71,6 +72,8 @@ const LineChart = () => {
           Pear Inc. is an American multinational pear company headquartered in
           somewhere, that designs, develops, and sells pears-related computer
           softwares and pears-related online services.
+          <hr></hr>
+          Dividend Yield: <DividendTooltip/>
         </CardBody>
       </Card>
     </Container>

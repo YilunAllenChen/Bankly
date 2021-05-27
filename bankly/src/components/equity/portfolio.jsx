@@ -1,8 +1,10 @@
 import React from "react";
 import { Card, CardHeader, CardBody, CardFooter, Col, Row } from "shards-react";
 
-import { useSelector } from "react-redux";
+import PortfolioTooltip from "./portfolio_tooltip";
 
+
+import { useSelector } from "react-redux";
 const selectEquityPortfolio = (state) => state.equity.portfolio;
 const selectQuote = (state) => state.equity.lineChartData.datasets[0].data;
 
@@ -20,10 +22,10 @@ function Portfolio() {
       <p key={key}>
         <Row>
           <Col xs="12" md="6" style={{ color: "#222222" }}>
-            {stocks[key]} shares of {key}
+            {stocks[key]} <PortfolioTooltip /> {key}
           </Col>
           <Col xs="12" md="6" style={{ color: "#888888" }}>
-            (value: ${(stocks[key] * quote).toFixed(1)});
+            (value: ${(stocks[key] * quote).toFixed(1)})
           </Col>
         </Row>
       </p>
@@ -56,8 +58,7 @@ function Portfolio() {
   return (
     <Card className="black">
       <CardHeader style={{ color: "black" }}>
-        Your Portfolio | Market Value:{" "}
-        <font style={{ color: "#545454" }}> ${totalValue.toFixed(2)}</font> {PLmsg}
+        My Portfolio | Market Value: ${totalValue.toFixed(2)} {PLmsg}
       </CardHeader>
       <CardBody style={{ color: "black" }}>
         <Row>
@@ -65,7 +66,7 @@ function Portfolio() {
             Cash
           </Col>
           <Col xs="12" md="6" style={{ color: "#888888" }}>
-            (value: ${portfolio.cash.toFixed(2)});
+             ${portfolio.cash.toFixed(2)} 
           </Col>
         </Row>
         <hr></hr>

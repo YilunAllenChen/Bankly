@@ -41,6 +41,18 @@ function Intro() {
                 </Button>
               </Col>
             </Row>
+            <br></br>
+            <br></br>
+            <Row>
+              <div>
+              Features: 
+              </div>
+              <ul>
+                <li>Learn Equity Trading in 5 minutes</li>
+                <li>Equity Trading Game</li>
+                <li><span style={{color: "#AAAAAA"}}>More under development...</span></li>
+              </ul>
+            </Row>
           </Container>
         </Row>
       </Container>

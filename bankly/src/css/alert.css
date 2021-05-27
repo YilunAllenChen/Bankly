@@ -1,0 +1,7 @@
+.dividendAlert {
+    border-radius: 5px;
+    top: 5%;
+    right: 5%;
+    max-width: 80%;
+    position: fixed;
+}
