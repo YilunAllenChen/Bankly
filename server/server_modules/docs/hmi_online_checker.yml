@@ -1,0 +1,31 @@
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: hmi_online_checker_request_params 
+      required:
+        - token
+      properties:
+        token:
+          type: string
+          description: token to perform checks.
+          example: "skldfmal"
+
+definitions:
+  hmi_online_checker_request_resp:
+    type: object
+    properties:
+      res:
+        type: string
+        enum: ["success, failure"]
+        example: "success"
+      msg:
+        type: string
+        enum: ["OK", "No user with rfid <> is found."]
+        example: "OK"
+responses:
+  200:
+    description: Function updates the online status of interfaces using the inf_ts.
+    schema:
+      $ref: '#/definitions/hmi_online_checker_request_resp'

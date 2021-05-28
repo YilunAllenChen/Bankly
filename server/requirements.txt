@@ -1,0 +1,5 @@
+Flask==1.1.2
+Flask-Cors==3.0.10
+Flask_Restful==0.3.8
+python-dotenv==0.17.0
+flasgger==0.9.5

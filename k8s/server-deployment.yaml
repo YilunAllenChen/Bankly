@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+  labels:
+    app: bankly-server 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bankly-server
+  template:
+    metadata:
+      labels:
+        app: bankly-server
+    spec:
+      containers:
+      - name: bankly-server
+        image: allenchen0223/bankly-server:v0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
