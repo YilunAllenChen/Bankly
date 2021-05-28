@@ -8,7 +8,7 @@ import EndgameModal from "../components/equity/end_game_modal";
 
 import "../css/common.css";
 
-function Intro() {
+function playEquity() {
   return (
     <div className="App-header">
       <StartupModal />
@@ -33,4 +33,4 @@ function Intro() {
   );
 }
 
-export default Intro;
+export default playEquity;

@@ -2,7 +2,15 @@ import { TiThMenuOutline } from "react-icons/ti";
 import "./floating_menu.css";
 
 import React from "react";
-import { Button, Modal, ModalBody, ModalHeader, Col, Row } from "shards-react";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  Col,
+  Row,
+  ModalFooter,
+} from "shards-react";
 import { toPage } from "../../states/store";
 import { connect } from "react-redux";
 
@@ -65,21 +73,103 @@ class FloatingMenu extends React.Component {
                     Equity
                   </Button>
                 </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("learnBonds")}
+                  >
+                    Bonds
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("learnSwaps")}
+                  >
+                    Swaps
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("learnOptions")}
+                  >
+                    Options
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("learnFX")}
+                  >
+                    Foreign Exchange
+                  </Button>
+                </Row>
               </Col>
+              <br />
               <Col xs="12" md="6">
                 <h5 className="white center"> Play </h5>{" "}
                 <Row>
                   <Button
                     className="optionbutton"
                     theme="light"
-                    onClick={() => this.goToPage("equity")}
+                    onClick={() => this.goToPage("playEquity")}
                   >
                     Equity
                   </Button>
                 </Row>
-              </Col>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("playBonds")}
+                  >
+                    Bonds
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("playSwaps")}
+                  >
+                    Swaps
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("playOptions")}
+                  >
+                    Options
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="dark"
+                    onClick={() => this.goToPage("playFX")}
+                  >
+                    Foreign Exchange
+                  </Button>
+                </Row>
+              </Col>{" "}
             </Row>
           </ModalBody>
+          <ModalFooter className="darkmodalheader">
+            <div>
+              *
+              <Button size="sm" theme="dark">
+                dark
+              </Button>{" "}
+              buttons are under development.
+            </div>
+          </ModalFooter>
         </Modal>
       </div>
     );

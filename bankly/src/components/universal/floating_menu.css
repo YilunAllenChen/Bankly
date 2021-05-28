@@ -1,12 +1,13 @@
 
 .floatingmenu {
   position: fixed;
-  bottom: 50px;
-  left: 50px;
+  bottom: min(50px, 3%);
+  left: min(50px, 5%);
   background-color:#AAFFFF;
   border-radius: 10px;
   padding: -10px;
   color: #112233;
+  z-index: 10000;
 }
 
 .bigmodal {
@@ -15,7 +16,7 @@
 }
 
 .darkmodalheader {
-    border-bottom: 0px;
+    border: 0px;
     background-color: #334455;
 }
 
@@ -29,6 +30,7 @@
 
 .center {
     text-align: center;
+    padding-top: 10px;
 }
 
 .closemenubutton {

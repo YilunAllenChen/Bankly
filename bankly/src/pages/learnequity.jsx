@@ -64,7 +64,7 @@ function Intro() {
           onClick={() => {
             dispatch(
               toPage({
-                view: "equity",
+                view: "playEquity",
               })
             );
           }}

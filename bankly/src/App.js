@@ -1,11 +1,14 @@
 import React from "react"
-import Welcome from "./pages/welcome"
-import Equity from "./pages/equity"
-import LearnEquity from "./pages/learnequity"
 import "./App.css"
 import { useSelector } from "react-redux"
 import { Container } from "shards-react"
 import FloatingMenu from "./components/universal/floating_menu"
+
+
+import Welcome from "./pages/welcome"
+import PlayEquity from "./pages/playequity"
+import LearnEquity from "./pages/learnequity"
+import InDev from "./pages/indev"
 
 export default function App() {
   const selectView = state => state.view;
@@ -18,9 +21,20 @@ export default function App() {
     case "learnEquity":
       main = <LearnEquity />;
       break;
-    case "equity":
-      main = <Equity />;
+    case "playEquity":
+      main = <PlayEquity />;
       break;
+    case "learnBonds":
+    case "playBonds":
+    case "learnSwaps":
+    case "playSwaps":
+    case "learnFX":
+    case "playFX":
+    case "learnOptions":
+    case "playOptions":
+      main = <InDev />;
+      break;
+    
     default:
       main = <Welcome />;
       break;
