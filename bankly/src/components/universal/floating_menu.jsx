@@ -65,27 +65,9 @@ class FloatingMenu extends React.Component {
                     Equity
                   </Button>
                 </Row>
-                <Row>
-                  <Button
-                    className="optionbutton"
-                    theme="info"
-                    onClick={() => this.goToPage("learnEquity")}
-                  >
-                    Equity
-                  </Button>
-                </Row>
               </Col>
               <Col xs="12" md="6">
                 <h5 className="white center"> Play </h5>{" "}
-                <Row>
-                  <Button
-                    className="optionbutton"
-                    theme="light"
-                    onClick={() => this.goToPage("equity")}
-                  >
-                    Equity
-                  </Button>
-                </Row>
                 <Row>
                   <Button
                     className="optionbutton"

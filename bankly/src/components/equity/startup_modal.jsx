@@ -25,7 +25,7 @@ export default class BasicModalExample extends React.Component {
             <p>Click around to see what different things mean! </p>
             <p>When you're ready, click on <span style={{color: "blue"}}>BUY</span> and <span style={{color: "blue"}}>SELL</span> buttons to start trading!</p>
             <p>Hold stocks for at least 90 days (ticks) to receive dividends!</p>
-            <p>When you feel good about the result, hit <span style={{color: "green"}}>DONE</span> to see how you did! </p>
+            <p>When you feel good about the result, hit <span style={{color: "red"}}>I'm DONE!</span> on the bottom right to see how you did! </p>
           </ModalBody>
         </Modal>
       </div>
