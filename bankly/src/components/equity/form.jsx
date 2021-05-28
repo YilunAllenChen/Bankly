@@ -104,6 +104,7 @@ class EquityForm extends React.Component {
   }
 
   pushNewPrice = () => {
+    if (this.props.done) return;
     const data = this.props.lineChartData.datasets[0].data;
     let quote = data[data.length - 1];
     let newQuote = (quote * (0.94 + Math.random() * 0.13)).toFixed(2);
@@ -117,17 +118,14 @@ class EquityForm extends React.Component {
   componentDidMount() {
     this.pushNewPriceInterval = setInterval(this.pushNewPrice.bind(this), 2500);
   }
+
   componentWillUnmount() {
     clearInterval(this.pushNewPriceInterval);
   }
 
   handleEndGame() {
-    clearInterval(this.pushNewPriceInterval);
-    this.props.dispatch(
-      equityTradingStatus({
-        done: true,
-      })
-    );
+    // clearInterval(this.pushNewPriceInterval);
+    this.props.dispatch(equityTradingStatus(true));
   }
 
   render() {
@@ -188,6 +186,7 @@ class EquityForm extends React.Component {
 const mapStateToProps = (state) => ({
   lineChartData: state.equity.lineChartData,
   portfolio: state.equity.portfolio,
+  done: state.equity.done,
 });
 
 export default connect(mapStateToProps)(EquityForm);

@@ -30,13 +30,22 @@ const options = {
     },
   },
   scales: {
-    y: {
+    y: {      title: {
+        display: true,
+        text: "price / $",
+        color: "#FFFFFF"
+      },
       ticks: {
         color: "white",
         beginAtZero: true,
       },
     },
     x: {
+      title: {
+        display: true,
+        text: "time / days",
+        color: "#FFFFFF"
+      },
       ticks: {
         color: "white",
       },

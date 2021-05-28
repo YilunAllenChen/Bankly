@@ -76,10 +76,9 @@ export class HowToTradeEquity extends React.Component {
               own that equity.
             </p>
             <p>
-              There are brokers like Robinhood, WeBull, TDAmerite and others
-              where you can trade stocks on your phone. If you're rich, you
-              might also find bankers who're willing to do that for you for a
-              fee (of course!).
+              There are commission-free brokers onlinewhere you can trade stocks
+              on your phone. If you're rich, you might also find bankers who're
+              willing to do that for you for a fee (of course!).
             </p>
             <p>
               Generally speaking, you can trade equity on the stock exchanges on

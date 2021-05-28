@@ -17,7 +17,7 @@ export function tradeStockAction(state, action) {
   state.equity.portfolio.stocks[symbol] += numShares;
 }
 export function equityTradingStatusAction(state, action) {
-  let { done } = action.payload;
+  let done = action.payload;
   state.equity.done = done;
 }
 export function resetStockDataAction(state, action) {

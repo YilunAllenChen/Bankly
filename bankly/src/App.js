@@ -5,6 +5,7 @@ import LearnEquity from "./pages/learnequity"
 import "./App.css"
 import { useSelector } from "react-redux"
 import { Container } from "shards-react"
+import FloatingMenu from "./components/universal/floating_menu"
 
 export default function App() {
   const selectView = state => state.view;
@@ -25,7 +26,8 @@ export default function App() {
       break;
   }
   return (
-    <Container style={{margin: 0, padding: 0, maxWidth: '100%'}}>
+    <Container style={{ margin: 0, padding: 0, maxWidth: '100%' }}>
+      <FloatingMenu />
       <div className="background"></div>
       <div className="App nomargin">
         {/* {view} */}
