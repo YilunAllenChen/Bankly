@@ -5,7 +5,7 @@ parameters:
     schema:
       id: hmi_online_checker_request_params 
       required:
-        - token
+        # - token
       properties:
         token:
           type: string

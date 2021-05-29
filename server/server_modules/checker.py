@@ -5,15 +5,19 @@ import json
 import os
 from dotenv import load_dotenv
 
-HOC = Blueprint("HMIOnlineChecker", __name__)
+HOC = Blueprint("Counter", __name__)
 api = Api(HOC)
 
 
+class Counter(Resource):
+    count = 0
 
-class HMIOnlineChecker(Resource):
-    @swag_from("docs/hmi_online_checker.yml", validation=True)
+    @swag_from("docs/hmi_online_checker.yml", validation=False)
+    def get(self):
+        return Counter.count
     def post(self):
-        return "Hi"
+        Counter.count += 1
+        return Counter.count
 
 
-api.add_resource(HMIOnlineChecker, "/hmi_online_check/")
+api.add_resource(Counter, "/count/")

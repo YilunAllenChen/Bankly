@@ -14,18 +14,18 @@ load_dotenv()
 
 
 app = Flask(__name__)
-CORS(app)
 swagger = Swagger(app)
 
 
 
-app.register_blueprint(HOC)
 
 
 @app.route("/")
 def running():
     return "HI"
 
+app.register_blueprint(HOC)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 # NOTE: after the sever is running
 if __name__ == "__main__":

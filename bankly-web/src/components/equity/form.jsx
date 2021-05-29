@@ -8,6 +8,7 @@ import {
   equityTradingStatus,
 } from "../../states/store";
 import Portfolio from "./portfolio";
+import server_increment_buy from "../../apis/equity/increment";
 
 class EquityForm extends React.Component {
   constructor(props) {
@@ -64,13 +65,14 @@ class EquityForm extends React.Component {
         numShares: this.state.numShares,
         cashChange: -amount,
       })
-    );
-    this.setState({
-      error: "",
-    });
-  }
-
-  handleSell() {
+      );
+      this.setState({
+        error: "",
+      });
+      server_increment_buy();
+    }
+    
+    handleSell() {
     let symbol = "PEAR";
     let historyPrice = this.props.lineChartData.datasets[0].data;
     let quote = historyPrice[historyPrice.length - 1];
@@ -154,12 +156,12 @@ class EquityForm extends React.Component {
         </div>
         <hr></hr>
         <Row>
-          <Col xs="6" md="4">
+          <Col xs="6" md="6">
             <Button theme="info" onClick={this.handleBuy}>
               Buy {this.state.numShares} shares at {quote}
             </Button>
           </Col>
-          <Col xs="6" md="4">
+          <Col xs="6" md="6">
             <Button theme="info" onClick={this.handleSell}>
               Sell {this.state.numShares} shares at {quote}
             </Button>
