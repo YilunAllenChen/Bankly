@@ -5,14 +5,14 @@ import json
 import os
 from dotenv import load_dotenv
 
-HOC = Blueprint("Counter", __name__)
-api = Api(HOC)
+CTR = Blueprint("Counter", __name__)
+api = Api(CTR)
 
 
 class Counter(Resource):
     count = 0
 
-    @swag_from("docs/hmi_online_checker.yml", validation=False)
+    @swag_from("docs/Counter.yml", validation=False)
     def get(self):
         return Counter.count
     def post(self):

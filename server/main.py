@@ -4,7 +4,7 @@ from flasgger import Swagger
 import os
 from dotenv import load_dotenv
 
-from server_modules.checker import HOC
+from server_modules.counter import CTR
 
 load_dotenv()
 
@@ -24,7 +24,7 @@ swagger = Swagger(app)
 def running():
     return "HI"
 
-app.register_blueprint(HOC)
+app.register_blueprint(CTR)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 # NOTE: after the sever is running
