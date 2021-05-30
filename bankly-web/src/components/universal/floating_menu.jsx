@@ -42,11 +42,11 @@ class FloatingMenu extends React.Component {
         </Button>
         <Modal className="bigmodal" open={open} toggle={this.toggle}>
           <ModalHeader className="darkmodalheader">
-            <span className="white">Portal! </span>
+            <span className="white">🔮 The Magical Portal </span>
           </ModalHeader>
           <ModalBody className="darkmodalbody center">
-            👋 Where are we going today?
-            <p>Don't worry - we'll save your progress.</p>
+            👋 Already know where you're going?
+            <p>Don't worry - we'll save all your progress.</p>
             <hr></hr>
             <Row>
               <Col xs="12">
@@ -159,6 +159,20 @@ class FloatingMenu extends React.Component {
                   </Button>
                 </Row>
               </Col>{" "}
+            </Row>
+            <br />
+            <Row>
+              <Col xs="12">
+                <Row>
+                  <Button
+                    className="optionbutton"
+                    theme="success"
+                    onClick={() => this.goToPage("sponsoring")}
+                  >
+                    💙 Become a Sponsor 
+                  </Button>
+                </Row>
+              </Col>
             </Row>
           </ModalBody>
           <ModalFooter className="darkmodalheader">

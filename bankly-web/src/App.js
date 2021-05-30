@@ -10,6 +10,7 @@ import PlayEquity from "./pages/playequity"
 import LearnEquity from "./pages/learnequity"
 import InDev from "./pages/indev"
 import LearnBonds from "./pages/learnbonds"
+import Sponsoring from "./pages/sponsoring";
 
 export default function App() {
   const selectView = state => state.view;
@@ -18,6 +19,9 @@ export default function App() {
   switch (view) {
     case "welcome":
       main = <Welcome />;
+      break;
+    case "sponsoring":
+      main = <Sponsoring />;
       break;
     case "learnEquity":
       main = <LearnEquity />;
