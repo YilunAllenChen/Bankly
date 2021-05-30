@@ -6,13 +6,14 @@ import "../../css/scrollable_modal.css";
 export class WhatAreBonds extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -20,7 +21,7 @@ export class WhatAreBonds extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>🧐 What are bonds?</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>🧐 What are bonds?</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>What's a bond?</ModalHeader>
           <ModalBody className="modalbody">
@@ -59,13 +60,14 @@ export class WhatAreBonds extends React.Component {
 export class BuyerOrSeller extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -73,9 +75,9 @@ export class BuyerOrSeller extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>🛒 Buyer Or Seller?</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>🛒 Buyer, Seller, or Issuer?</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
-          <ModalHeader>What's a bond?</ModalHeader>
+          <ModalHeader>Buyer, Seller, or Issuer?</ModalHeader>
           <ModalBody className="modalbody">
             <p>
               Remember your friends who borrowed your money to do their
@@ -83,12 +85,32 @@ export class BuyerOrSeller extends React.Component {
             </p>
             <p>
               In this scenario, you are the <b>buyer</b> of the bond (because
-              you "paid" money to them!). Your friend is the <b>seller</b> of
-              the bond (because he "received" your money!)
+              you "paid" money to them!). Your friend is the <b>Issuer</b> of
+              the bond.
             </p>
-            <p>So, when you see people dealing bonds, remember one thing: </p>
             <p>
-              <strong>The Seller of the bond is in the Buyer's debt.</strong>
+              Let's say 6 months into the bond, you already got $60 in coupons
+              from your friend. However, you don't want the bond anymore. you
+              want to sell it to someone else. Yes, you can do that!
+            </p>
+            <p>
+              {" "}
+              BUT... You're gonna have to sell it at a discounted price because
+              you already got $60 in coupons. The $1,000 bond is not worth as
+              much as before because it's missing these cash flows.
+            </p>
+            <p>
+              One of your co-works decided to purchase this bond at $980. You
+              put that $980 into your pocket. Now your friend (who issued the
+              bond) will pay coupons, and eventually the original $1,000, to
+              your co-worker.
+            </p>
+            <p>
+              Rule of thumb: When you see people dealing with bonds, remember
+              one thing:{" "}
+            </p>
+            <p>
+              <strong>The Issuer of the bond is in the Buyer's debt.</strong>
             </p>
           </ModalBody>
         </Modal>
@@ -100,13 +122,14 @@ export class BuyerOrSeller extends React.Component {
 export class Coupons extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -114,7 +137,7 @@ export class Coupons extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>💵 Coupon: The Monthly Bill</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>💵 Coupon: The Monthly Bill</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Coupon: The Dollar Bill</ModalHeader>
           <ModalBody className="modalbody">
@@ -143,16 +166,18 @@ export class Coupons extends React.Component {
     );
   }
 }
+
 export class MatureDate extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -168,7 +193,7 @@ export class MatureDate extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.toggle}>🗓️ Maturity Date: Due Date</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>🗓️ Maturity Date: Due Date</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Maturity Date: The Due Date</ModalHeader>
           <ModalBody className="modalbody">
@@ -203,13 +228,14 @@ export class MatureDate extends React.Component {
 export class Nominal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -217,7 +243,7 @@ export class Nominal extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>💳 Nominal: Money Lended</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>💳 Nominal: Money Lended</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Nominal: Money Lended</ModalHeader>
           <ModalBody className="modalbody">
@@ -249,13 +275,14 @@ export class Nominal extends React.Component {
 export class GovernmentBonds extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -263,22 +290,22 @@ export class GovernmentBonds extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>👑 Government Bonds</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>👑 Government Bonds</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Government Bonds</ModalHeader>
           <ModalBody className="modalbody">
             <p>
               {" "}
               You probably have heard about these bonds that the government
-              sells.{" "}
+              issues.{" "}
             </p>
 
             <p>
               For example, in the U.S. there are:
               <ul>
                 <li>T-bonds (longest time, biggest coupon)</li>
-                <li>T-notes(medium time, medium size coupon)</li>
-                <li>T-bills(shortest time, smallest coupon)</li>
+                <li>T-notes (medium time, medium size coupon)</li>
+                <li>T-bills (shortest time, smallest coupon)</li>
               </ul>
             </p>
 
@@ -303,13 +330,14 @@ export class GovernmentBonds extends React.Component {
 export class CorporateBonds extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -317,12 +345,12 @@ export class CorporateBonds extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>👔 Corporate Bonds</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>👔 Corporate Bonds</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Corporate Bonds</ModalHeader>
           <ModalBody className="modalbody">
             <p>
-              Corporate bonds, intuitively, are bonds sold by corporates, or
+              Corporate bonds, intuitively, are bonds issued by corporates, or
               companies.
             </p>
 
@@ -357,13 +385,14 @@ export class CorporateBonds extends React.Component {
 export class Defaults extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -371,7 +400,7 @@ export class Defaults extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>👿 Debt Defaults</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}> 👿 Debt Defaults</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Debt Defaults</ModalHeader>
           <ModalBody className="modalbody">

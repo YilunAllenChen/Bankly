@@ -6,13 +6,14 @@ import "../../css/scrollable_modal.css";
 export class WhatIsEquity extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -20,7 +21,7 @@ export class WhatIsEquity extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>🤔 What the junk is Equity?</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>🤔 What the junk is Equity?</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>What's Equity?</ModalHeader>
           <ModalBody className="modalbody">
@@ -51,13 +52,14 @@ export class WhatIsEquity extends React.Component {
 export class HowToTradeEquity extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -65,7 +67,7 @@ export class HowToTradeEquity extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>🤔 How Do I Trade Equity?</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>🤔 How Do I Trade Equity?</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>What's Equity?</ModalHeader>
           <ModalBody className="modalbody">
@@ -94,13 +96,14 @@ export class HowToTradeEquity extends React.Component {
 export class StockGoesUp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -108,7 +111,7 @@ export class StockGoesUp extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>📈 Stock Goes Up!</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>📈 Stock Goes Up!</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Stock goes up</ModalHeader>
           <ModalBody className="modalbody">
@@ -142,13 +145,14 @@ export class StockGoesUp extends React.Component {
 export class Dividends extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { open: false };
+    this.state = { open: false, theme: "primary" };
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
       open: !this.state.open,
+      theme: "success"
     });
   }
 
@@ -156,7 +160,7 @@ export class Dividends extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <Button onClick={this.toggle}>💰 Dividends!</Button>
+        <Button theme={this.state.theme} onClick={this.toggle}>💰 Dividends!</Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Dividends</ModalHeader>
           <ModalBody className="modalbody">

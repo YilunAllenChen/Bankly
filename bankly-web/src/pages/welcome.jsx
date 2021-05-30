@@ -17,9 +17,7 @@ function Intro() {
         <Row className="centered">
           <Container>
             <Row>
-              <Col>
-                Financial Market. Learn how it's done.
-              </Col>
+              <Col>Financial Market. Learn how it's done.</Col>
             </Row>
             <br />
 
@@ -44,15 +42,27 @@ function Intro() {
             <br></br>
             <br></br>
             <Row>
-              <div>
-              Features: 
-              </div>
+              <div>Features:</div>
               <ul>
                 <li>Learn Equity Trading in 5 minutes</li>
                 <li>Equity Trading Game</li>
                 <li>Learn about Bonds in 5 minutes</li>
-                <li><span style={{color: "#AAAAAA"}}>More under development...</span></li>
+                <li>
+                  <span style={{ color: "#AAAAAA" }}>
+                    More under development...
+                  </span>
+                </li>
               </ul>
+            </Row>
+            <hr></hr>
+            <Row>
+              <Col>
+                <Button pill theme="success" onClick={()=>{
+                  window.open("https://buy.stripe.com/test_3cs8xv5nW2kJbaUeUV", "_blank")
+                }}>
+                  Become a Sponsor 💙 (Under Development)
+                </Button>
+              </Col>
             </Row>
           </Container>
         </Row>
