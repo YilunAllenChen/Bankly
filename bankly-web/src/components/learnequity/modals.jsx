@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Modal, ModalBody, ModalHeader } from "shards-react";
 
-import "../../css/equity.css";
+import "../../css/scrollable_modal.css";
 
 export class WhatIsEquity extends React.Component {
   constructor(props) {
