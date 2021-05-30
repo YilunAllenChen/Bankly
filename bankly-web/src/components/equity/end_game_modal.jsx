@@ -13,7 +13,7 @@ class EndgameModal extends React.Component {
     super(props);
     this.state = { open: false };
     this.toggle = this.toggle.bind(this);
-    this.handleGoBack = this.handleGoBack.bind(this);
+    this.handleGoToBonds = this.handleGoToBonds.bind(this);
     this.handleResetGame = this.handleResetGame.bind(this);
     this.handleContinueGame = this.handleContinueGame.bind(this);
   }
@@ -24,11 +24,11 @@ class EndgameModal extends React.Component {
     });
   }
 
-  handleGoBack() {
+  handleGoToBonds() {
     this.props.dispatch(equityTradingStatus(false));
     this.props.dispatch(
       toPage({
-        view: "learnEquity",
+        view: "learnBonds",
       })
     );
   }
@@ -130,9 +130,9 @@ class EndgameModal extends React.Component {
                 outline
                 theme="success"
                 className="optionbutton"
-                onClick={this.handleGoBack}
+                onClick={this.handleGoToBonds}
               >
-                Quick Review
+                Next Up: Bonds!
               </Button>{" "}
             </Row>
             <Row>
@@ -142,7 +142,7 @@ class EndgameModal extends React.Component {
                 className="optionbutton"
                 onClick={this.handleContinueGame}
               >
-                Wait! I'm not done yet!
+                I'm not done yet! Continue the game!
               </Button>{" "}
             </Row>
             <Row>
@@ -152,7 +152,7 @@ class EndgameModal extends React.Component {
                 className="optionbutton"
                 onClick={this.handleResetGame}
               >
-                Reset the game
+                Need a Restart? Click here.
               </Button>
             </Row>
           </ModalBody>

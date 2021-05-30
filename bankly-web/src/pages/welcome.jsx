@@ -50,6 +50,7 @@ function Intro() {
               <ul>
                 <li>Learn Equity Trading in 5 minutes</li>
                 <li>Equity Trading Game</li>
+                <li>Learn about Bonds in 5 minutes</li>
                 <li><span style={{color: "#AAAAAA"}}>More under development...</span></li>
               </ul>
             </Row>
