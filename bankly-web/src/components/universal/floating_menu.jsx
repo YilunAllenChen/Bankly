@@ -125,7 +125,7 @@ class FloatingMenu extends React.Component {
                 <Row>
                   <Button
                     className="optionbutton"
-                    theme="dark"
+                    theme="light"
                     onClick={() => this.goToPage("playBonds")}
                   >
                     Bonds

@@ -3,11 +3,8 @@ import { Container, Row, Col } from "shards-react";
 import { Button } from "shards-react";
 import "../css/common.css";
 
-import { useDispatch } from "react-redux";
-import { toPage } from "../states/store";
 
 function Intro() {
-  const dispatch = useDispatch();
 
   return (
     <div className="App-header">
@@ -53,12 +50,12 @@ function Intro() {
                   theme="warning"
                   onClick={() => {
                     window.open(
-                      "https://buy.stripe.com/test_00g9Bz3fObVjbaU3cf",
+                      "https://buy.stripe.com/test_6oEfZXcQo4sRdj2cMQ",
                       "_blank"
                     );
                   }}
                 >
-                  💛 $20 Big Cup of Cofee (Under Development)
+                  💛 $20 Big Cup of Coffee (Under Development)
                 </Button>
               </Col>
             </Row>

@@ -9,12 +9,12 @@ import {
   Nominal,
   CorporateBonds,
   GovernmentBonds,
-  Defaults
+  Defaults,
 } from "../components/learnbonds/modals";
 import { toPage } from "../states/store";
 
 import "../css/common.css";
-import '../css/margins.css'
+import "../css/margins.css";
 
 function Intro() {
   let dispatch = useDispatch();
@@ -34,10 +34,10 @@ function Intro() {
         </Row>
         <br />
         <Row>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <WhatAreBonds />
           </Col>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <BuyerOrSeller />
           </Col>
           <Col sm="6"></Col>
@@ -48,13 +48,13 @@ function Intro() {
         </Row>
         <br />
         <Row>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <Nominal />
           </Col>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <Coupons />
           </Col>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <MatureDate />
           </Col>
           <Col md="3"></Col>
@@ -67,10 +67,10 @@ function Intro() {
         </Row>
         <br />
         <Row>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <GovernmentBonds />
           </Col>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <CorporateBonds />
           </Col>
           <Col sm="6"></Col>
@@ -81,11 +81,33 @@ function Intro() {
         </Row>
         <br />
         <Row>
-          <Col xs='12' sm='6' md='3' className="margin-5px">
+          <Col xs="12" sm="6" md="3" className="margin-5px">
             <Defaults />
           </Col>
         </Row>
         <br />
+        <Row>
+          <Col>
+            <Row>Done Learning? Let's hit the road.</Row>
+            <br/>
+            <Row>
+              <Button
+                pill
+                theme="info"
+                size="lg"
+                onClick={() => {
+                  dispatch(
+                    toPage({
+                      view: "playBonds",
+                    })
+                  );
+                }}
+              >
+                Start Trading some Bonds!
+              </Button>
+            </Row>
+          </Col>
+        </Row>
       </Container>
     </div>
   );

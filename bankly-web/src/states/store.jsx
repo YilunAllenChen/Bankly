@@ -5,14 +5,17 @@ import {
   resetStockDataAction,
   tradeStockAction,
 } from "./actions/equity";
+import { tradeBondsAction, stepBondsTimeAction } from "./actions/bonds";
 
-import equityInit from "./init/equity"
+import equityInit from "./init/equity";
+import bondsInit from "./init/bonds";
 
 const rootReducer = createSlice({
   name: "counter",
   initialState: {
     view: "welcome",
     equity: equityInit,
+    bonds: bondsInit,
   },
   reducers: {
     toPage: (state, action) => {
@@ -22,6 +25,9 @@ const rootReducer = createSlice({
     tradeStock: tradeStockAction,
     equityTradingStatus: equityTradingStatusAction,
     resetStockData: resetStockDataAction,
+
+    tradeBonds: tradeBondsAction,
+    stepBondsTime: stepBondsTimeAction
   },
 });
 
@@ -31,6 +37,9 @@ export const {
   tradeStock,
   equityTradingStatus,
   resetStockData,
+
+  tradeBonds,
+  stepBondsTime,
 } = rootReducer.actions;
 
 export const store = configureStore({
