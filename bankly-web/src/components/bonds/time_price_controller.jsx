@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { stepBondsTime } from "../../states/store";
+import { stepBondsTime, bondsTradingStatus } from "../../states/store";
 
 class BondTimePriceController extends React.Component {
   constructor(props) {
@@ -19,6 +19,7 @@ class BondTimePriceController extends React.Component {
   }
 
   componentWillUnmount() {
+    this.props.dispatch(bondsTradingStatus(false));
     clearInterval(this.timeStepInterval);
   }
 

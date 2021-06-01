@@ -50,30 +50,17 @@ class EndgameModal extends React.Component {
           <ModalHeader>Let's take a look...</ModalHeader>
           <ModalBody className="black">
             <p>
-              Through investing in bonds with the initial $100,000 for all these years... you have made
+              Through investing in bonds with the initial $100,000 for all these
+              years... you have made
             </p>
             <p style={{ color: "#55AA55" }}>
               ${(totalValue - 100000).toFixed(2)}!
             </p>
-
             <p>
               Now, that's a long time we spent to get this return. It's kind of
-              boring, to some sense 🥱 - You might be wondering, how is this any
-              good for banks to make big money💰?
+              boring, to some sense 🥱! But remember - patience is key! Bonds
+              are slow, but they're far less volatile than equity!
             </p>
-            <p>
-              Turns out, the prices of bonds are not steady - they fluctuate
-              📈📉 just like stocks. Therefore, banks trade these bonds just
-              like they would with stocks.
-            </p>
-
-            <p>
-              Bonds are also seen as a great risk management / hedging tool.
-              Combined with swaps, options, and other fancy strategies, banks
-              and traders are able to protect themselves from some of the worst
-              disasters💥!
-            </p>
-
             <br></br>
             <Row>
               <Button
