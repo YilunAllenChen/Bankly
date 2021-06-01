@@ -6,7 +6,9 @@ import {
   WhySwaps,
   Notional,
   SwapsStrategy,
-  CDS
+  CDS,
+  EquitySwaps,
+  InterestRateSwaps,
 } from "../components/learnswaps/modals";
 // import { toPage } from "../states/store";
 
@@ -38,32 +40,26 @@ function Intro() {
           <Col xs="12" sm="6" md="3" className="margin-5px">
             <WhySwaps />
           </Col>
-          <Col sm="6"></Col>
-        </Row>
-        <br />
-        <Row>
-          <Col>What's in a Swap</Col>
-        </Row>
-        <br />
-        <Row>
           <Col xs="12" sm="6" md="3" className="margin-5px">
             <Notional />
           </Col>
           <Col xs="12" sm="6" md="3" className="margin-5px">
             <SwapsStrategy />
           </Col>
-          <Col sm="6"></Col>
+        </Row>
+        <Row>
+          <Col>Types of Swaps</Col>
         </Row>
         <br />
         <Row>
-          <Col>Swaps in history</Col>
-        </Row>
-        <br />        <Row>
           <Col xs="12" sm="6" md="3" className="margin-5px">
-            <CDS />
+            <EquitySwaps />
           </Col>
           <Col xs="12" sm="6" md="3" className="margin-5px">
-            {/* <SwapsStrategy /> */}
+            <InterestRateSwaps />
+          </Col>
+          <Col xs="12" sm="6" md="3" className="margin-5px">
+            <CDS />
           </Col>
           <Col sm="6"></Col>
         </Row>

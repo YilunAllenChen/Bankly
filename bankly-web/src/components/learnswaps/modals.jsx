@@ -37,8 +37,8 @@ export class WhatAreSwaps extends React.Component {
             <p>
               Now consider this: You have an 🍎 apple orchard. Your best friend
               Oliver owns a 🍇 grape field. You think apple prices will go up
-              compared to grapes, but Oliver thinks the opposite. He's a grape
-              person. So you two made a bet:
+              compared to grapes. Oliver, however, is a grape person. He thinks
+              the opposite. So you two made a bet:
             </p>
             <p>
               You think 100kg of apples will be worth more than 50kg of olives.
@@ -79,7 +79,7 @@ export class WhySwaps extends React.Component {
     return (
       <div>
         <Button theme={this.state.theme} onClick={this.toggle}>
-          🧐 Profit or Loss?
+          🤲🏻 Profit or Loss?
         </Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Swaps: When do you make/lose money?</ModalHeader>
@@ -133,7 +133,7 @@ export class Notional extends React.Component {
     return (
       <div>
         <Button theme={this.state.theme} onClick={this.toggle}>
-          🧐 Notional
+          🙂 Notional
         </Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Notional</ModalHeader>
@@ -170,50 +170,6 @@ export class Notional extends React.Component {
   }
 }
 
-export class EquitySwaps extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { open: false, theme: "primary" };
-    this.toggle = this.toggle.bind(this);
-  }
-
-  toggle() {
-    this.setState({
-      open: !this.state.open,
-      theme: "success",
-    });
-  }
-
-  render() {
-    const { open } = this.state;
-    return (
-      <div>
-        <Button theme={this.state.theme} onClick={this.toggle}>
-          🧐 Equity Swaps
-        </Button>
-        <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
-          <ModalHeader>Equity Swaps</ModalHeader>
-          <ModalBody className="modalbody">
-            <p>
-              Oliver's grape 🍇 business is booming! His grape company went
-              public and is now tradable on stock exchanges.
-            </p>
-            <p>
-              You believe Oliver's business will continue its success, so you
-              wish to enter a bullish swap position for Oliver's Grapes Inc.,
-              meaning, you think Oliver's business will go up!
-            </p>
-            <p>
-              This is when we need an Equity Swap. Let's say a bank comes to you
-              and say, hey we can sell you that swap.
-            </p>
-          </ModalBody>
-        </Modal>
-      </div>
-    );
-  }
-}
-
 export class SwapsStrategy extends React.Component {
   constructor(props) {
     super(props);
@@ -233,19 +189,139 @@ export class SwapsStrategy extends React.Component {
     return (
       <div>
         <Button theme={this.state.theme} onClick={this.toggle}>
-          🧐 Why Swaps
+          💭 Why Swaps
         </Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Why Swaps</ModalHeader>
           <ModalBody className="modalbody">
             <p>
-              With the swap payment that you made, Oliver was able to quickly
+              Why do we trade swaps? Well, let's look at Oliver!
+            </p>
+            <p>
+              With the huge swap payment that we made, Oliver was able to quickly
               recover from the raccoon catastrophy. It's almost like he bought
-              insurance on his grape fields. Lucky Oliver!
+              insurance on his grape fields. Ah, lucky Oliver!
             </p>
             <p>
               That's one of the most popular usage of swaps. It acts as a
               hedging tool to move risks off your shoulders.
+            </p>
+          </ModalBody>
+        </Modal>
+      </div>
+    );
+  }
+}
+export class EquitySwaps extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: false, theme: "primary" };
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      open: !this.state.open,
+      theme: "success",
+    });
+  }
+
+  render() {
+    const { open } = this.state;
+    return (
+      <div>
+        <Button theme={this.state.theme} onClick={this.toggle}>
+        🏛️ Equity Swaps
+        </Button>
+        <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
+          <ModalHeader>Equity Swaps</ModalHeader>
+          <ModalBody className="modalbody">
+            <p>
+              Oliver's grape 🍇 business is booming! His grape company went
+              public and is now tradable on stock exchanges.
+            </p>
+            <p>
+              You believe Oliver's business will continue its success, so you
+              wish to enter a bullish swap position for Oliver's Grapes Inc.,
+              meaning, you think Oliver's business will go up!
+            </p>
+            <p>
+              This is when we need an Equity Swap. Let's say a bank comes to you
+              and say, hey we can sell you that swap with $1,000 variable
+              notional. You need to pay us monthly premiums at $10 per contract,
+              and we pay you for the gains in the shares.
+            </p>
+            <p>
+              Now what the heck does that mean? Don't panic. here's what that
+              means.
+            </p>
+            <p>
+              Let's say Oliver's Grapes Inc. is trading at $100 a share at this
+              moment. Then buying 1 contract of swap would be more or less like
+              owning $1,000/$100 = 10 shares of Oliver's Grapes Inc. stock.
+            </p>
+            <p>
+              As an example, let's say the stock goes up by 20% to $120/share by
+              the end of the month. Then the nominal value also grows by 20%,
+              mirroring the growth of the share, to $1,200. Now, the bank will
+              need to pay you the extra $200, because that's what you agreed
+              upon. In the meantime, it's also time for you to pay the monthly
+              premium. So we subtract the $10 from the $200, you got $190 in
+              profits.
+            </p>
+            <p>
+              Another example: the second month, the stock goes down 8.3% from
+              $120 to $110 per share. Aw, snap. Now you not only need to pay the
+              monthly premium, but also the capital loss on the equity. That'd
+              be $1,200 * 8.3% + 10 = $110.
+            </p>
+          </ModalBody>
+        </Modal>
+      </div>
+    );
+  }
+}
+
+export class InterestRateSwaps extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: false, theme: "primary" };
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      open: !this.state.open,
+      theme: "success",
+    });
+  }
+
+  render() {
+    const { open } = this.state;
+    return (
+      <div>
+        <Button theme={this.state.theme} onClick={this.toggle}>
+          💰 Interest Rate Swaps
+        </Button>
+        <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
+          <ModalHeader>Interest Rate Swaps</ModalHeader>
+          <ModalBody className="modalbody">
+            <p>
+              There's this thing called LIBOR (London Inter-bank Offered Rate)
+              that banks 🏦 around the world 🌎 all agree on. It's basically the
+              interest rate that banks charge each other when lending each other
+              money.
+            </p>
+            <p>
+              Now, you can put swaps on that too! Let's say you want to borrow
+              money from a local bank at a fixed rate, and lend into other banks
+              at dynamic LIBOR rates.
+            </p>
+            <p>
+              Hold on a second. Why would you do that? Well, if the fixed rate
+              that you're borrowing is lower than LIBOR rate that you're
+              receiving, then you're making money 💰 from that difference in
+              interest rates! And that's exactly how Interest Rate Swaps work.
             </p>
           </ModalBody>
         </Modal>
@@ -273,7 +349,7 @@ export class CDS extends React.Component {
     return (
       <div>
         <Button theme={this.state.theme} onClick={this.toggle}>
-          🧐 CDS in 2008 Crisis
+        📜 CDS in 2008 Crisis
         </Button>
         <Modal open={open} toggle={this.toggle} backdrop={false} size="lg">
           <ModalHeader>Credit Default Swaps in 2008</ModalHeader>
