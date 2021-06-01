@@ -6,6 +6,7 @@ import { stepBondsTime } from "../../states/store";
 class BondTimePriceController extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   timeStep = () => {
@@ -14,7 +15,7 @@ class BondTimePriceController extends React.Component {
   };
 
   componentDidMount() {
-    this.timeStepInterval = setInterval(this.timeStep.bind(this), 60);
+    this.timeStepInterval = setInterval(this.timeStep.bind(this), 1000);
   }
 
   componentWillUnmount() {

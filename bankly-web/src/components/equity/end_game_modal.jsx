@@ -25,7 +25,7 @@ class EndgameModal extends React.Component {
   }
 
   handleGoToBonds() {
-    this.props.dispatch(equityTradingStatus(false));
+    this.props.dispatch(equityTradingStatus(true));
     this.props.dispatch(
       toPage({
         view: "learnBonds",

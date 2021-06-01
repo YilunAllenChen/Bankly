@@ -19,12 +19,12 @@ export default class BasicModalExample extends React.Component {
     return (
       <div>
         <Modal open={open} toggle={this.toggle}>
-          <ModalHeader>Welcome to Equity Trading</ModalHeader>
+          <ModalHeader>Welcome to Bond Trading</ModalHeader>
           <ModalBody className="black">
-            <p>👋 Ready to trade some Equity?</p>
+            <p>👋 Ready to trade some Bonds?</p>
             <p>Click around to see what different things mean! </p>
-            <p>When you're ready, click on <span style={{color: "blue"}}>BUY</span> and <span style={{color: "blue"}}>SELL</span> buttons to start trading!</p>
-            <p>Hold stocks for at least 90 days (ticks) to receive dividends!</p>
+            <p>When you're ready, find your favorite bond, and click on <span style={{color: "blue"}}>BUY</span> buttons!</p>
+            <p>Hold your bonds to receive coupons!</p>
             <p>When you feel good about the result, hit <span style={{color: "red"}}>I'm DONE!</span> on the bottom right to see how you did! </p>
           </ModalBody>
         </Modal>

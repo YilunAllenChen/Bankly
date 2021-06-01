@@ -5,7 +5,12 @@ import {
   resetStockDataAction,
   tradeStockAction,
 } from "./actions/equity";
-import { tradeBondsAction, stepBondsTimeAction } from "./actions/bonds";
+import {
+  tradeBondsAction,
+  stepBondsTimeAction,
+  bondsTradingStatusAction,
+  resetBondsDataAction,
+} from "./actions/bonds";
 
 import equityInit from "./init/equity";
 import bondsInit from "./init/bonds";
@@ -27,7 +32,9 @@ const rootReducer = createSlice({
     resetStockData: resetStockDataAction,
 
     tradeBonds: tradeBondsAction,
-    stepBondsTime: stepBondsTimeAction
+    stepBondsTime: stepBondsTimeAction,
+    bondsTradingStatus: bondsTradingStatusAction,
+    resetBondsData: resetBondsDataAction,
   },
 });
 
@@ -40,6 +47,8 @@ export const {
 
   tradeBonds,
   stepBondsTime,
+  bondsTradingStatus,
+  resetBondsData,
 } = rootReducer.actions;
 
 export const store = configureStore({

@@ -22,46 +22,51 @@ const style_bond_p = {
 
 const selectAvailableBonds = (state) => state.bonds.bonds;
 const selectPortfolio = (state) => state.bonds.portfolio;
+const selectTime = (state) => state.bonds.time;
 
 export default function BasicCardExample() {
   const portfolio = useSelector(selectPortfolio);
 
-  function handleBuy(name, value) {
-    if (portfolio.cash < value) {
+  function handleBuy(name, numContracts, bondData, value) {
+    if (portfolio.cash < value * numContracts) {
       console.log("Not enough cash");
       return;
     }
     dispatch(
       tradeBonds({
         bondName: name,
-        numContracts: 1,
-        cashChange: -value,
+        numContracts: numContracts,
+        bondData: bondData,
+        cashChange: -value * numContracts,
       })
     );
   }
 
-  function handleSell(name, value) {
-    if (!(name in portfolio.holdings)){
-      console.log("Not enough bonds to sell");
-      return;
-    }
-    dispatch(
-      tradeBonds({
-        bondName: name,
-        numContracts: -1,
-        cashChange: value,
-      })
-    );
-  }
+  // function handleSell(name, value) {
+  //   if (!(name in portfolio.holdings)) {
+  //     console.log("Not enough bonds to sell");
+  //     return;
+  //   }
+  //   dispatch(
+  //     tradeBonds({
+  //       bondName: name,
+  //       numContracts: -1,
+  //       cashChange: value,
+  //     })
+  //   );
+  // }
 
   const dispatch = useDispatch();
   const bonds = useSelector(selectAvailableBonds);
+  const time = useSelector(selectTime);
 
   let available_bonds = [];
   for (const [name, this_bond] of Object.entries(bonds)) {
-    let maturityDate = new Date();
-    maturityDate.setFullYear(today.getFullYear() + this_bond.maturityLength);
+    let maturityDate = new Date(time);
+    maturityDate.setFullYear(maturityDate.getFullYear() + this_bond.maturityLength);
     let maturityDateStr = maturityDate.toLocaleDateString();
+
+    let nameWithDate = name + " " + maturityDateStr;
 
     available_bonds.push(
       <Col key={name} sm="12" md="6" style={{ padding: "0px" }}>
@@ -87,16 +92,20 @@ export default function BasicCardExample() {
             className="black"
           >
             <Button
-              style={{ padding: "0.5rem 1.5rem", margin: "0.25rem 1rem" }}
-              onClick={() => handleBuy(name, this_bond.value)}
+              style={{ padding: "0.5rem 1.5rem", margin: "0.25rem 0.6rem" }}
+              onClick={() =>
+                handleBuy(nameWithDate, 1, this_bond, this_bond.value)
+              }
             >
-              Buy
-            </Button>
+              Buy 1
+            </Button>{" "}
             <Button
-              style={{ padding: "0.5rem 1.5rem", margin: "0.25rem 1rem" }}
-              onClick={() => handleSell(name, this_bond.value)}
+              style={{ padding: "0.5rem 1.5rem", margin: "0.25rem 0.6rem" }}
+              onClick={() =>
+                handleBuy(nameWithDate, 10, this_bond, this_bond.value)
+              }
             >
-              Sell
+              Buy 10
             </Button>
           </CardFooter>
         </Card>
