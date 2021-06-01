@@ -13,7 +13,6 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { tradeBonds } from "../../states/store";
 
-const today = new Date();
 
 const style_bond_p = {
   fontSize: "14px",

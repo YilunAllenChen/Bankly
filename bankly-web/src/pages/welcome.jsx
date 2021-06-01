@@ -17,7 +17,10 @@ function Intro() {
         <Row className="centered">
           <Container>
             <Row>
-              <Col>Financial Market. Learn how it's done.</Col>
+              <Col>
+                <p>Financial Market.</p>
+                <p>Learn how it's done by playing it. </p>
+              </Col>
             </Row>
             <br />
 
@@ -42,24 +45,32 @@ function Intro() {
             <br></br>
             <br></br>
             <Row>
-              <div>Features:</div>
-              <ul>
-                <li>Learn Equity Trading in 5 minutes</li>
-                <li>Equity Trading Game</li>
-                <li>Learn about Bonds in 5 minutes</li>
-                <li>
-                  <span style={{ color: "#AAAAAA" }}>
-                    More under development...
-                  </span>
-                </li>
-              </ul>
+              <Col>
+                <div>Learn and Play:</div>
+                <ul>
+                  <li>Equity</li>
+                  <li>Bonds</li>
+                  <li>
+                    <span style={{ color: "#AAAAAA" }}>
+                      More under development...
+                    </span>
+                  </li>
+                </ul>
+              </Col>
             </Row>
             <hr></hr>
             <Row>
               <Col>
-                <Button pill theme="success" onClick={()=>{
-                  window.open("https://buy.stripe.com/test_3cs8xv5nW2kJbaUeUV", "_blank")
-                }}>
+                <Button
+                  pill
+                  theme="success"
+                  onClick={() => {
+                    window.open(
+                      "https://buy.stripe.com/test_3cs8xv5nW2kJbaUeUV",
+                      "_blank"
+                    );
+                  }}
+                >
                   Become a Sponsor 💙 (Under Development)
                 </Button>
               </Col>

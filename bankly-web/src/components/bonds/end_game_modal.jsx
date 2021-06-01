@@ -41,7 +41,7 @@ class EndgameModal extends React.Component {
   render() {
     const open = this.props.doneBondsTrading;
     let totalValue = this.props.cash;
-    for (const [bondID, holdingData] of Object.entries(this.props.holdings)) {
+    for (const holdingData of Object.values(this.props.holdings)) {
       totalValue += holdingData.numContracts * holdingData.bondData.nominal;
     }
     return (

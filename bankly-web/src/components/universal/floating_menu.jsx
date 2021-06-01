@@ -13,6 +13,7 @@ import {
 } from "shards-react";
 import { toPage } from "../../states/store";
 import { connect } from "react-redux";
+import Contact from "./contact";
 
 class FloatingMenu extends React.Component {
   constructor(props) {
@@ -85,7 +86,7 @@ class FloatingMenu extends React.Component {
                 <Row>
                   <Button
                     className="optionbutton"
-                    theme="dark"
+                    theme="info"
                     onClick={() => this.goToPage("learnSwaps")}
                   >
                     Swaps
@@ -160,17 +161,22 @@ class FloatingMenu extends React.Component {
                 </Row>
               </Col>{" "}
             </Row>
-            <br />
+            <hr style={{ borderColor: "#5566AA" }} />
             <Row>
-              <Col xs="12">
+              <Col xs="12" md="6">
                 <Row>
                   <Button
                     className="optionbutton"
                     theme="success"
                     onClick={() => this.goToPage("sponsoring")}
                   >
-                    💙 Become a Sponsor 
+                    💙 Become a Sponsor
                   </Button>
+                </Row>
+              </Col>
+              <Col xs="12" md="6">
+                <Row>
+                  <Contact />
                 </Row>
               </Col>
             </Row>

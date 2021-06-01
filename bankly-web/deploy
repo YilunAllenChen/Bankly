@@ -5,7 +5,10 @@
 NAME_IMAGE="allenchen0223/bankly"
 NAME_CONTAINER="bankly-app"
 
-
+if [ $1 = "what" ]; then
+    sudo docker image list -a | grep -m 5 bankly
+    exit 0
+fi
 
 # Create production build
 npm run build
