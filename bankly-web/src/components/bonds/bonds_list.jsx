@@ -1,17 +1,9 @@
 import React from "react";
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Button,
-  Col,
   Row,
   Container,
 } from "shards-react";
-
-import { useSelector, useDispatch } from "react-redux";
-import { tradeBonds } from "../../states/store";
+import { useSelector,  } from "react-redux";
 
 import BondsCardTooltip from "./bonds_card_tooltip";
 

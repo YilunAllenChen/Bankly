@@ -122,6 +122,7 @@ class EquityForm extends React.Component {
   }
 
   componentWillUnmount() {
+    this.props.dispatch(equityTradingStatus(false));
     clearInterval(this.pushNewPriceInterval);
   }
 

@@ -24,7 +24,7 @@ class EndgameModal extends React.Component {
     this.props.dispatch(bondsTradingStatus(true));
     this.props.dispatch(
       toPage({
-        view: "learnBonds",
+        view: "learnSwaps",
       })
     );
   }
@@ -49,8 +49,12 @@ class EndgameModal extends React.Component {
         <Modal open={open} toggle={this.toggle}>
           <ModalHeader>Let's take a look...</ModalHeader>
           <ModalBody className="black">
-            <p>Through investing in bonds for all these years, you have made</p>
-            <p>${(totalValue - 100000).toFixed(2)}!</p>
+            <p>
+              Through investing in bonds with the initial $100,000 for all these years... you have made
+            </p>
+            <p style={{ color: "#55AA55" }}>
+              ${(totalValue - 100000).toFixed(2)}!
+            </p>
 
             <p>
               Now, that's a long time we spent to get this return. It's kind of
@@ -78,7 +82,7 @@ class EndgameModal extends React.Component {
                 className="optionbutton"
                 onClick={this.handleGoToBonds}
               >
-                Quick Review on Bonds...
+                Next Up: Swaps
               </Button>{" "}
             </Row>
             <Row>
