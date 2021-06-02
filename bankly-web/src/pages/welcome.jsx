@@ -59,22 +59,6 @@ function Intro() {
               </Col>
             </Row>
             <hr></hr>
-            <Row>
-              <Col>
-                <Button
-                  pill
-                  theme="success"
-                  onClick={() => {
-                    window.open(
-                      "https://buy.stripe.com/test_3cs8xv5nW2kJbaUeUV",
-                      "_blank"
-                    );
-                  }}
-                >
-                  Become a Sponsor 💙 (Under Development)
-                </Button>
-              </Col>
-            </Row>
           </Container>
         </Row>
       </Container>

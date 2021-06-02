@@ -34,12 +34,27 @@ function Intro() {
                   theme="warning"
                   onClick={() => {
                     window.open(
-                      "https://buy.stripe.com/test_00g9Bz3fObVjbaU3cf",
+                      "https://buy.stripe.com/14k14H1Gk3nm46Y4gn",
                       "_blank"
                     );
                   }}
                 >
-                  💛 $5 Smol Cup of Coffee (Under Development)
+                  💛 $5 Smol Cup of Coffee
+                </Button>
+              </Col> <Col>
+                <Button
+                  className="optionbutton"
+                  pill
+                  outline
+                  theme="warning"
+                  onClick={() => {
+                    window.open(
+                      "https://buy.stripe.com/9AQ5kX2Koe205b23ck",
+                      "_blank"
+                    );
+                  }}
+                >
+                  💛💛 $10 Big Cup of Coffee 
                 </Button>
               </Col>
               <Col>
@@ -50,12 +65,12 @@ function Intro() {
                   theme="warning"
                   onClick={() => {
                     window.open(
-                      "https://buy.stripe.com/test_6oEfZXcQo4sRdj2cMQ",
+                      "https://buy.stripe.com/5kA6p184I3nmcDueV0",
                       "_blank"
                     );
                   }}
                 >
-                  💛 $20 Big Cup of Coffee (Under Development)
+                  💛💛💛 $20 COFFEE BUCKET 
                 </Button>
               </Col>
             </Row>

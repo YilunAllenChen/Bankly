@@ -41,7 +41,7 @@ export class WhatAreSwaps extends React.Component {
               the opposite. So you two made a bet:
             </p>
             <p>
-              You think 100kg of apples will be worth more than 50kg of olives.
+              You think 100kg of apples will be worth more than 50kg of grapes.
               So every month, if 100kg of apples is indeed more expensive than
               50kg of grapes, then Oliver has to pay you that price difference.
               For example, if at the end of the month, apple is $5/kg and grapes
