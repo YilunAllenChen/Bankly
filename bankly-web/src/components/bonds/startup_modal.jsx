@@ -24,6 +24,7 @@ export default class BasicModalExample extends React.Component {
             <p>👋 Ready to trade some Bonds?</p>
             <p>Click around to see what different things mean! </p>
             <p>When you're ready, find your favorite bond, and click on <span style={{color: "blue"}}>BUY</span> buttons!</p>
+            <p>If you're on mobile, your portfolio is all the way at the bottom.</p>
             <p>Hold your bonds to receive coupons!</p>
             <p>When you feel good about the result, hit <span style={{color: "red"}}>I'm DONE!</span> on the bottom right to see how you did! </p>
           </ModalBody>
